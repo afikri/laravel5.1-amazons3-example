@@ -16,8 +16,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('test', function(){
-  echo '123';
-  $s3 = Storage::disk('s3');
-  $s3->put('file.txt','This is a test', 'public');
-});
+Route::post('welcome/upload', 'UploadController@upload');
